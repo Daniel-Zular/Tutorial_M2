@@ -36,10 +36,10 @@
 	</schema>
 	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/danie/OneDrive/Documentos/GitHub/Tutorial_M2/SEMANA_02/02_AUT_EST_ENTREGA/ponderada1" useSystemProxy="false" />
 	<layout name="Main Layout" id="Layout-4f9" show_relation="columns" >
-		<entity schema="Default" name="Realizações" color="C1D8EE" x="160" y="464" />
-		<entity schema="Default" name="User" color="C1D8EE" x="224" y="208" />
-		<entity schema="Default" name="experiência" color="C1D8EE" x="464" y="128" />
-		<entity schema="Default" name="formação" color="C1D8EE" x="416" y="320" />
+		<entity schema="Default" name="Realizações" color="C1D8EE" x="976" y="256" />
+		<entity schema="Default" name="User" color="C1D8EE" x="544" y="256" />
+		<entity schema="Default" name="experiência" color="C1D8EE" x="784" y="256" />
+		<entity schema="Default" name="formação" color="C1D8EE" x="672" y="256" />
 		<callout x="48" y="48" pointer="Round" >
 			<comment><![CDATA[This is a layout. 
 - Right-click the layout to create new tables. 
