@@ -74,7 +74,7 @@ app.post('/create-formacao', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-//UPDATE
+//UPDATE (ainda não consegui fazer certo, acredito)
 
 app.put('/update-formacao', (req, res) => {
     let titulo = req.body.titulo;
