@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currículo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1A1A1A;
+    }
+
+    li {
+      color: white;
+    }
+
+    h1 {
+      color: #868686;
+    }
+
+    h2 {
+      color: #868686;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      display: none; /* Oculta a seção inicialmente */
+    }
+
+    #menu {
+      width: 200px;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      right: -200px; /* Alterado para o lado direito */
+      transition: right 0.3s; /* Alterado para a propriedade 'right' */
+    }
+
+    #menuButton {
+      position: fixed;
+      top: 10px;
+      right: 10px; /* Alterado para o lado direito */
+    }
+
+    input {
+      background-color: #333;
+      color: white;
+      height: 25px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: white;
+      border-radius: 4px;
+      height: 50px;
+      width: 150px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Daniel Zular</h1>
+  <div class="section" id="formacao">
+    <h2 class="section-title">Formação</h2>
+    <li><b>Instituto de Tecnologia e Liderança</b></li>
+    <p>&nbsp; &nbsp; &nbsp;Engenharia de Software</p>
+    <p>&nbsp; &nbsp; &nbsp;2023-2026</p>
+  </div>
+
+  <div class="section" id="experiencia">
+    <h2 class="section-title">Experiência</h2>
+    <li><b>Google</b></li>
+    <p>&nbsp; &nbsp; &nbsp;CEO</p>
+    <p>&nbsp; &nbsp; &nbsp;Atualmente</p>
+  </div>
+
+  <div class="section" id="realizacoes">
+    <h2 class="section-title">Realizações</h2>
+    <ul>
+      <li>Realização 1</li>
+      <li>Realização 2</li>
+      <li>Realização 3</li>
+    </ul>
+  </div>
+
+  <button id="exibirCurriculo">Exibir currículo</button>
+  <div id="conteudo"></div>
+
+  <button class="section" id="menuButton">Entrar em contato</button>
+  <div id="menu">
+    <ul>
+      <form>
+        <input type="text" name="Nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="Mensagem" placeholder="Mensagem" required>
+        <input type="hidden" name="_autoresponse" value="Obrigado por entrar em contato! Responderei assim que possível.">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit">Enviar</button>
+      </form>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#exibirCurriculo').click(function() {
+        $.ajax({
+          url: 'secoes.html', // Arquivo ou rota que retorna o conteúdo das seções
+          success: function(data) {
+            $('#conteudo').html(data); // Insere o conteúdo das seções na div #conteudo
+            $('.section').fadeIn(1000); // Aplica a animação fadeIn() nas seções
+          }
+        });
+      });
+
+      $('#menuButton').click(function() {
+        $('#menu').animate({ right: '0px' }, 300); /* Alterado para a propriedade 'right' */
+      });
+
+      $('#menu').mouseleave(function() {
+        $('#menu').animate({ right: '-200px' }, 300); /* Alterado para a propriedade 'right' */
+      });
+    });
+  </script>
+</body>
+</html>
